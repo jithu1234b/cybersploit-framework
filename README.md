@@ -6,8 +6,11 @@ To install it please Run:-
 3. chmod u+x *
 3. bash requirements
 4. bash cybersploit-u
-Now cybersploit-framework is installed!
+
+#Now cybersploit-framework is installed!
+
 #To use it just type "csfconsole" and press enter key!
+
 #To update it just type "cybersploit-u" and press enter
 it will take some time to update!
 
