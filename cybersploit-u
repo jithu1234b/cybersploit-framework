@@ -69,8 +69,11 @@ clear
 printf "\e[1;32m\e[104mLatest vesion of cybersploit is installed\e[0m\n"
 printf "\n"
 printf "\e[1;36mRun:- 'csfconsole' to use it\e[0m\n"
+echo
 printf "\e[1;31m\e[104mEver you want to update just Run 'cybersploit-u'\e[0m\n"
+echo
 printf "\e[1;96mIf you liked it then please give us a star '✰' on github :)\e[0m\n"
-printf "\e[1;91mTHANK YOU!!!\e[0m"
-
+printf "\e[1;91mTHANK YOU!!!\e[0m\n"
+echo
+printf "\e[1;97mplease run 'cd $HOME' if 'ls' command gives any error\e[1;0m\n
 
