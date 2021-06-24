@@ -38,7 +38,7 @@ printf "\e[1;34m\e[46mplease do not stop here the process by any chance otherwis
 sleep 2
 cd $dty && cd ..
 jithu=$(find cybersploit-framework)
-if [[ $jithu == cybersploit-framework)
+if [[ $jithu == cybersploit-framework ]]
 then
 rm -rf cybersploit-framework
 else
@@ -68,7 +68,7 @@ rm -rf cybersploit-framework
 clear
 printf "\e[1;32m\e[104mLatest vesion of cybersploit is installed\e[0m\n"
 printf "\n"
-printf "\e[1;36mRun:- 'cybersploit-framework' to use it\e[0m\n"
+printf "\e[1;36mRun:- 'csfconsole' to use it\e[0m\n"
 printf "\e[1;31m\e[104mEver you want to update just Run 'cybersploit-u'\e[0m\n"
 printf "\e[1;96mIf you liked it then please give us a star '✰' on github :)\e[0m\n"
 printf "\e[1;91mTHANK YOU!!!\e[0m"
