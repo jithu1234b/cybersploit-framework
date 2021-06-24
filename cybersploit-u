@@ -75,5 +75,5 @@ echo
 printf "\e[1;96mIf you liked it then please give us a star '✰' on github :)\e[0m\n"
 printf "\e[1;91mTHANK YOU!!!\e[0m\n"
 echo
-printf "\e[1;97mplease run 'cd $HOME' if 'ls' command gives any error\e[1;0m\n
+printf "\e[1;97mplease run 'cd $HOME' if 'ls' command gives any error\e[1;0m\n"
 
