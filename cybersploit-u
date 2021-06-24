@@ -11,7 +11,7 @@ printf "\e[1;33m.\e[0m"
 sleep 0.2
 printf "\e[1;33m.\e[0m"
 sleep 0.2
-printf "\e[1;33m.\e[0m"
+printf "\e[1;33m.\e[0m\n"
 dty=$(pwd)
 cd $HOME
 cd .. && cd usr/bin
