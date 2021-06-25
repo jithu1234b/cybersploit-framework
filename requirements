@@ -4,7 +4,7 @@ echo
 sleep 2
 apt install git wget curl -y
 sleep 0.25
-bash <(curl -fsSL "https://git.io/tcolors") -c 1 -y
+bash <(curl -fsSL "https://git.io/tcolors") -c 1 -y #credit for this colour scheme goes to to abkhackerofficial !
 apt install python python2 -y
 apt install findutils -y
 pip install instaloader
