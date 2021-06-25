@@ -38,7 +38,7 @@ if [[ $bhutuu == .paygen ]]
 then
 rm -rf .paygen
 else
-printf "\e[1;97m hidden program files also removed\e[0m\n
+printf "\e[1;97m hidden program files also removed\e[0m\n"
 sleep 0.8
 fi"
 echo
