@@ -83,7 +83,7 @@ while True:
 				else:
 					print ("\n")
 					print ("\033[1;37msince you don't have installed metasploit it can\' run")
-					print ("033[1;32mEXITING......!"0
+					print ("033[1;32mEXITING......!")
 					time.sleep (0.4)
 					print ("\n")
 					exit()
