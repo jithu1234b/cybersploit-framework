@@ -1,0 +1,89 @@
+#!/bin/bash
+printf "\e[1;32m\e[44m>>cybersoloit-framework is updating\e[0m\n"
+printf "\e[1;33mplease wait\e[0m"
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+dty=$(pwd)
+cd $HOME
+cd .. && cd usr/bin
+jk=$(find csfconsole)
+if [[ $jk == csfconsole ]]
+then
+rm -rf csfconsole
+else
+printf "\e[1;90myou may installing cybersploit-framework first time :)\e[0m\n"
+echo
+printf "\e[1;91mThank you for installing our cybersploit-framework :)\e[0m\n"
+sleep 2
+fi
+suman=$(find cybersploit-u)
+if [[ $suman == cybersploit-u ]]
+then
+rm -rf cybersploit-u
+printf "\e[1;97m\e[41m Old version is removing\e[0m\n"
+else
+printf "\e[1;97m\e[41mNo old version found to remove\e[0m\n"
+fi
+bhutuu=$(find .paygen)
+if [[ $bhutuu == .paygen ]]
+then
+rm -rf .paygen
+else
+printf "\e[1;97m hidden program files also removed\e[0m\n
+sleep 0.8
+fi"
+echo
+printf "\e[1;34m\e[46mplease do not stop here the process by any chance otherwise so sad for you\e[0m\n"
+sleep 2
+cd $dty && cd ..
+jithu=$(find cybersploit-framework)
+if [[ $jithu == cybersploit-framework)
+then
+rm -rf cybersploit-framework
+else
+printf "\e[1;35mOld version is completely removed\e[0m\n"
+fi
+printf "\e[1;35mOld version is completely removed\e[0m\n"
+sleep 0.7
+printf "\e[1;32mInstalling latest version\e[0m"
+sleep 0.5
+printf "\e[1;32m.\e[0m"
+sleep 0.2
+printf "\e[1;32m.\e[0m"
+sleep 0.2
+printf "\e[1;32m.\e[0m"
+sleep 0.2
+printf "\e[1;32m.\e[0m\n"
+git clone https://github.com/jithu1234b/cybersploit-framework
+cd cybersploit-framework
+chmod u+x *
+printf "\e[1;31m\e[45mchecking and installing requirements\e[0m\n"
+sleep 0.25
+bash requirements
+mv -v csfconsole /data/data/com.termux/files/usr/bin
+mv -v cybersploit-u /data/data/com.termux/files/usr/bin
+mv -v .paygen /data/data/com.termux/files/usr/bin
+cd ..
+rm -rf cybersploit-framework
+clear
+printf "\e[1;32m\e[104mLatest vesion of cybersploit is installed\e[0m\n"
+printf "\n"
+printf "\e[1;36mRun:- 'cybersploit-framework' to use it\e[0m\n"
+printf "\e[1;31m\e[104mEver you want to update just Run 'cybersploit-u'\e[0m\n"
+printf "\e[1;96mIf you liked it then please give us a star '✰' on github :)\e[0m\n"
+printf "\e[1;91mTHANK YOU!!!\e[0m"
+echo
+printf "\e[1;97mplease run 'cd \$HOME' if 'ls' command gives any error\e[1;0m\n"
+
+
+
+
