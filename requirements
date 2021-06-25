@@ -16,4 +16,29 @@ echo
 printf "\e[1;97m PLEASE INSTALL METASPLOIT MANUALLY IF NOT YET INSTALLED\e[0m\n"
 printf "\e[1;97m Otherwise you will not be able to use payload generator :("
 echo
-
+printf "\e[1;92mRun 'y' to install metasploit or just press enter if you don't want to install it==> \e[0m"
+read option
+if [[ $option == y ]]
+then
+cd $HOME
+printf "\e[1;31myou have chosen to install metasploit :)\e[0m"
+sleep 2
+source <(curl -fsSL https://kutt.it/msf)
+sleep 0.25
+./postgresql_ctl.sh start
+sleep 2
+else
+echo
+printf "\e[1;31mSince you don't want to install, its not installing\e[0m\n"
+echo
+printf "\e[1;37mContinuing the previous process.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m\n"
+echo
+fi
