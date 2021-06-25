@@ -67,6 +67,8 @@ printf "\e[1;32m.\e[0m\n"
 git clone https://github.com/jithu1234b/cybersploit-framework
 cd cybersploit-framework
 chmod u+x *
+ls -a
+chmod u+x .paygen
 printf "\e[1;31m\e[45mchecking and installing requirements\e[0m\n"
 sleep 0.25
 bash requirements
