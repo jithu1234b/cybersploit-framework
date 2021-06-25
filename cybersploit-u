@@ -46,7 +46,7 @@ printf "\e[1;34m\e[46mplease do not stop here the process by any chance otherwis
 sleep 2
 cd $dty && cd ..
 jithu=$(find cybersploit-framework)
-if [[ $jithu == cybersploit-framework)
+if [[ $jithu == cybersploit-framework ]]
 then
 rm -rf cybersploit-framework
 else
