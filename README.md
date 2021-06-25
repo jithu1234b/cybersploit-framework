@@ -14,4 +14,4 @@ To install it please Run:-
 #To update it just type "cybersploit-u" and press enter
 it will take some time to update!
 
-     !!THANK FOR USING CYBERSPLOIT-FRAMEWORK!!
+     !!THANK YOU FOR USING CYBERSPLOIT-FRAMEWORK!!
