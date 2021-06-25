@@ -13,7 +13,7 @@ pip install six
 echo
 printf "\e[1;97m\e[41mRequirements installation completed :)\e[0m\n"
 echo
-printf "\e[1;97m PLEASE INSTALL METASPLOIT MANUALLY IF NOT YET INSTALLED\e[0m")
+printf "\e[1;97m PLEASE INSTALL METASPLOIT MANUALLY IF NOT YET INSTALLED\e[0m\n"
 printf "\e[1;97m Otherwise you will not be able to use payload generator :("
 echo
 
