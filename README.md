@@ -1,6 +1,7 @@
 # cybersploit-framework
-Pentesting tool based on python&bash
-This tool only for educational purposes only,
+#Pentesting tool based on python&bash
+
+ note:This tool only for educational purposes only,
  we are not responsible if any illegal activities done by you
 To install it please Run:-
 1. git clone https://github.com/jithu1234b/cybersploit-framework
