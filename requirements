@@ -1,0 +1,56 @@
+#!/data/data/com.termux/files/usr/bin/bash
+printf "\e[1;32m\e[44m>>Run 'y' whenever asked\e[0m\n"
+echo
+sleep 2
+apt install git wget curl -y
+sleep 0.25
+bash <(curl -fsSL "https://git.io/termuxblack") -i -y #credit for termuxblack and apkmod goes to Hax4us ~Lokesh pandey !
+sleep 2
+bash <(curl -fsSL "https://git.io/tcolors") -c 1 -y #credit for this colour scheme goes to abhacker official !
+printf "\e[1;32m Do you want to update apkmod? If yes then run 'y' else press enter to continue next==> \e[0m"
+read opinion
+if [[ $opinion == y ]]
+then
+apt install apkmod apkmod2 -y
+printf "\e[1;32m NOW apkmod IS UPDATING SO WHENEVER ASK ANY THING JUST RUN 'y' !!\e[0m\n" 
+apkmod -u
+else
+printf "\e[1;92m you chosen not to update apkmod :(\e[0m\n"
+fi
+apt install python python2 -y
+apt install findutils -y
+pip install instaloader
+pip install requests
+pip install six
+echo
+printf "\e[1;97m\e[41mRequirements installation completed :)\e[0m\n"
+echo
+printf "\e[1;97m PLEASE INSTALL METASPLOIT MANUALLY IF NOT YET INSTALLED\e[0m\n"
+printf "\e[1;97m Otherwise you will not be able to use payload generator :("
+echo
+printf "\e[1;92mRun 'y' to install metasploit or just press enter if you don't want to install it==> \e[0m"
+read option
+if [[ $option == y ]]
+then
+cd $HOME
+printf "\e[1;31myou have chosen to install metasploit :)\e[0m"
+sleep 2
+source <(curl -fsSL https://kutt.it/msf)
+sleep 0.25
+./postgresql_ctl.sh start
+sleep 2
+else
+echo
+printf "\e[1;31mSince you don't want to install, its not installing\e[0m\n"
+echo
+printf "\e[1;37mContinuing the previous process.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m"
+sleep 0.3
+printf "\e[1;37m.\e[0m\n"
+echo
+fi
