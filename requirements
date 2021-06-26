@@ -7,9 +7,16 @@ sleep 0.25
 bash <(curl -fsSL "https://git.io/termuxblack") -i -y #credit for termuxblack and apkmod goes to Hax4us ~Lokesh pandey !
 sleep 2
 bash <(curl -fsSL "https://git.io/tcolors") -c 1 -y #credit for this colour scheme goes to abhacker official !
+printf "\e[1;32m Do you want to update apkmod? If yes then run 'y' else press enter to continue next==> \e[0m"
+read opinion
+if [[ $opinion == y ]]
+then
 apt install apkmod apkmod2 -y
 printf "\e[1;32m NOW apkmod IS UPDATING SO WHENEVER ASK ANY THING JUST RUN 'y' !!\e[0m\n" 
 apkmod -u
+else
+printf "\e[1;92m you chosen -->Not to update apkmod :(\e[0m\n"
+fi
 apt install python python2 -y
 apt install findutils -y
 pip install instaloader
