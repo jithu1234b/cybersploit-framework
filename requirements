@@ -4,7 +4,12 @@ echo
 sleep 2
 apt install git wget curl -y
 sleep 0.25
+bash <(curl -fsSL "https://git.io/termuxblack") -i -y #credit for termuxblack goes to Hax4us ~Lokesh pandey !
+sleep 2
 bash <(curl -fsSL "https://git.io/tcolors") -c 1 -y #credit for this colour scheme goes to abhacker official !
+apt install apkmod apkmod2 -y
+printf "\e[1;32m NOW apkmod IS UPDATING SO WHENEVER ASK ANY THING JUST RUN 'y' !!\e[0m\n" 
+apkmod -u
 apt install python python2 -y
 apt install findutils -y
 pip install instaloader
