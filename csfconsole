@@ -421,7 +421,25 @@ while True:
 					else:
 						print ("\n")
 						print ("Try again with valid option")
+elif (optn == '7'):
+                                                time.sleep (0.4)
+                                                print("\033[1;35m <<<--------welcome to text to  base64 convrter------>>>\033[0m\n")
+                                                message =  input("\033[1;31mEnter your text---> \033[0m")
+                                                message_bytes = message.encode('ascii')
+                                                base64_bytes = base64.b64encode(message_bytes)
+                                                base64_message = base64_bytes.decode('ascii')
+                                                print("\033[1;34mResult--->",(base64_message))
+                                                print ("\n")
+                                                time.sleep (0.4)
+                                                read = input("\033[1;36m>>choose '1' To open the program again and any other button to exit-->")
 
+                                                if (read == '1'):
+                                                        print ("\033[1;32mrestarting the program")
+                                                        print ("\n")
+                                                        print ("\n")
+                                                        time.sleep (1)
+                                                else:
+                                                        exit()
 
 			elif (option == 'quit'):
 				print ("EXITING........!")
