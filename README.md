@@ -4,11 +4,23 @@
  note:This tool is only for educational purposes only,
  we are not responsible if any illegal activities done by you!!
 
-To install it please Run:-
-1. git clone https://github.com/jithu1234b/cybersploit-framework
-2. cd cybersploit-framework
-3. chmod u+x *
-4. bash cybersploit-u
+
+!!WELCOME TO CYBERSPLOIT-FRAMEWORK!!
+
+*Installation process:-
+
+ git clone https://github.com/jithu1234b/cybersploit-framework && cd cybersploit-framework && chmod u+x * && ./cybersploit-u
+
+*To use the program run --> csfconsole
+
+*To update the program run--> cybersploit-u
+
+*If you get any error while installation or any thing in this tool please ask here!!
+
+#🔥Direct installation:- "bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i"
+Just paste it your terminal it will install and update cybersploit-framework!!
+
+Thank you (from jk and suman~BHUTUU)
 
 #when it ask you to install metasploit-framework:-
 
