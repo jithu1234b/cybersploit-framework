@@ -16,7 +16,11 @@
 
 *If you get any error while installation or any thing in this tool please ask here!!
 
-#🔥Direct installation:- "bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i"
+
+#🔥Direct installation:- 
+
+"bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i"
+
 Just paste it your terminal it will install and update cybersploit-framework!!
 
 Thank you (from jk and suman~BHUTUU)
