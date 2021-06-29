@@ -4,7 +4,6 @@
  note:This tool is only for educational purposes only,
  we are not responsible if any illegal activities done by you!!
 
-
 !!WELCOME TO CYBERSPLOIT-FRAMEWORK!!
 
 *Installation process:-
