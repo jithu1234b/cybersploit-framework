@@ -21,6 +21,7 @@ read flpt
 echo
 printf "\e[1;31mEnter LPORT==>\e[0m "
 read lpt
+break
 else
 printf "\e[1;31mERROR: PLEASE ENTER A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m\n"
 echo
