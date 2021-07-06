@@ -21,10 +21,11 @@ read flpt
 echo
 printf "\e[1;31mEnter LPORT==>\e[0m "
 read lpt
-elif
-printf "\e[1;31mERROR: PLEASE ENTRR A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m "
-done
+else
+printf "\e[1;31mERROR: PLEASE ENTER A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m\n"
+echo
 fi
+done
 printf "\n"
 printf "\e[1;31mEnter a name for your payload==>\e[0m "
 read pld
