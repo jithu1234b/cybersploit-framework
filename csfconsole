@@ -192,7 +192,6 @@ xdg-open https://t.me/joinchat/0VDWtOuNT6lhYzM0
 
 			elif (option == '4'):
 				time.sleep (0.4)
-				print ("<<<------❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️------>>>")
 #code of instagram brute :)
 				print ("\033[5;33m	 ___       ____  _      _         ____       __  __")
 				print ("\033[5;33m	|_ _|_ __ / ___|| |_   / \   __ _|  _ \ __ _|  \/  |")
