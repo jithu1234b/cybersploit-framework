@@ -23,8 +23,7 @@ elif [[ $distro == /data/data/hilled.pwnterm/files/usr/home ]]
 then
 cd .. && cd bin
 else
-printf "\e[1;90m YOU ARE NOT USING TERMUX OR PWM-TERM SO GOOD BYE!!\e[0m\n"
-exit
+cd /usr/bin
 fi
 #<<<-----remove payload generator----->>>
 bhu=$(find .paygen)
@@ -129,8 +128,11 @@ mv -v .paygen /data/data/hilled.pwnterm/files/usr/bin
 mv -v .binderr /data/data/hilled.pwnterm/files/usr/bin
 mv -v .lembinder /data/data/hilled.pwnterm/files/usr/bin
 else
-printf "\e[1;97m ALREADY TOLD THAT THIS TOOL IS NOT FOR YOUR LINUX OS, SO GOOD BYE\e[0m\n"
-exit
+mv -v csfconsole /usr/bin
+mv -v cybersploit-u /usr/bin
+mv -v .paygen /usr/bin
+mv -v .binderr /usr/bin
+mv -v .lembinder /usr/bin
 fi
 #<<<------remove empty  cybersploit-framework directory------>>> 
 cd ..

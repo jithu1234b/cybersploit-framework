@@ -42,8 +42,7 @@ printf "\e[1;92m YOU ARE USING PWN-TERM AND APKMOD IS NOT AVAILABLE HERE HENCE Y
 printf "press ENTER to continue _"
 read ENTER
 else
-printf "\e[1;90m You are niether using termux nor pwn-term so good bye :/ \e[0m\n"
-exit
+sudo apt-get install -y lemon
 fi
 #<<<------installation of common secondary dependencies------>>>
 apt install python python2 -y
@@ -80,8 +79,17 @@ sleep 1
 printf "\e[1;97mIf any error occured during metasploit installation then inform us on our telegram group (link:- https://t.me/joinchat/sPry-cUszMw2ZWZk )\e[1;0m\n"
 sleep 5
 else
-printf "\e[1;34m YOUR OPERATING SYSTEM IS  NOT AUTHORISED TO USE THIS PROGRAM SO GOOD BYE :/ \e[0m\n"
-exit
+sudo apt-get update
+sleep 1
+sudo apt-get install postgersql
+sleep 1
+cd /tmp
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+sleep 1
+chmod +x msfinstall
+sleep 1
+msfdb init
+sleep 1
 fi
 else
 echo

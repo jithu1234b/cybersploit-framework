@@ -36,7 +36,7 @@ banner()
 #<<<---------------TOOL SECTION--------------->>>
 
 while True:
-	name = input("\033[1;36mEnter ur username ->> ")
+	name = input("\033[1;36mEnter your name ->> ")
 	mystring = input("\033[1;36mEnter your password --> ")
 	hash_object = hashlib.md5(mystring.encode())
 	code = (hash_object.hexdigest())
@@ -53,22 +53,24 @@ while True:
 
 			def __help__():
 				os.system('''
-B0="$(printf '\033[100m')"
-C6="$(printf '\033[96m')"
-R0="$(printf '\033[00m')"
+B0="$(printf '\e[45m')"
+C0="$(printf '\e[94m')"
+C1="$(printf '\e[36m')"
+C2="$(printf '\e[32m')"
+R0="$(printf '\e[0m')"
 echo -e "
 ${B0}HELP MENUE${R0}
-<====================================================================>
+${C0}<${C2}====================================================================${C0}>${R0}
     Command                      Description
     -------                      -----------
-   ${C6} quit or exit${R0} |->   Command to exit csfconsole!!
-   ${C6} clear${R0}        |->   Command to clear screen.
-   ${C6} help${R0}         |->   Command to show help meunu.
-   ${C6} banner${R0}       |->   Command to show banner of csfconsole.
-   ${C6} allprograms${R0}  |->   Command to show list of modules.
-   ${C6} list${R0}         |->   Command to show list submodules.
-   ${C6} back${R0}         |->   Command to get back to main menue.
-   ${C6} report${R0}       |->   command to contact us on telegram.
+   ${C0} quit or exit${R0} |->  ${C1} Command to exit csfconsole!!${R0}
+   ${C0} clear${R0}        |->  ${C1} Command to clear screen.${R0}
+   ${C0} help${R0}         |->  ${C1} Command to show help meunu.${R0}
+   ${C0} banner${R0}       |->  ${C1} Command to show banner of csfconsole.${R0}
+   ${C0} allprograms${R0}  |->  ${C1} Command to show list of modules.${R0}
+   ${C0} list${R0}         |->  ${C1} Command to show list submodules.${R0}
+   ${C0} back${R0}         |->  ${C1} Command to get back to main menue.${R0}
+   ${C0} report${R0}       |->  ${C1} command to contact us on telegram.${R0}
 "
 					''')
 			def __report__():
@@ -80,14 +82,14 @@ xdg-open https://t.me/joinchat/0VDWtOuNT6lhYzM0
 			def __programs__():
 				print ("\033[1;37m>>>select any of the following options")
 				print ("\n")
-				print ("\033[4;37m1:for metasploit payload generator\033[0;0m")
-				print ("\033[4;37m2:for payload binder with apk file\033[0;0m")
-				print ("\033[4;37m3:for L3MON RAT binder with apk file\033[0;0m")
-				print ("\033[4;37m4:for insta brute force :\033[0;0m")
-				print ("\033[4;37m5:for insta profile pic downloader :\033[0;0m")
-				print ("\033[4;37m6:for gmail brute force :\033[0;0m")
-				print ("\033[4;37m7:for text to hash converter\033[0;0m")
-				print ("\033[4;37m8:for base64/base32 to text decoder\033[0;0m")
+				print ("\033[4;2;37m1:for metasploit payload generator\033[0;0m")
+				print ("\033[4;2;37m2:for payload binder with apk file\033[0;0m")
+				print ("\033[4;2;37m3:for L3MON RAT binder with apk file\033[0;0m")
+				print ("\033[4;2;37m4:for insta brute force :\033[0;0m")
+				print ("\033[4;2;37m5:for insta profile pic downloader :\033[0;0m")
+				print ("\033[4;2;37m6:for gmail brute force :\033[0;0m")
+				print ("\033[4;2;37m7:for text to hash converter\033[0;0m")
+				print ("\033[4;2;37m8:for base64/base32 to text decoder\033[0;0m")
 				print ("\033[2;37mRun 'quit' to exit the program\033[0;0m")
 				print ("\033[2;37mRun 'cmd' to run system commands\033[0;0m")
 				print ("\n")
