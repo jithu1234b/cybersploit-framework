@@ -242,7 +242,7 @@ xdg-open https://t.me/joinchat/0VDWtOuNT6lhYzM0
 
 						payload = {
 							'username': user,
-							'enc_password': f'#PWD_INSTAGRAM_BROWSER:0:{time}:{pwd}',
+							'enc_password': f"#PWD_INSTAGRAM_BROWSER:0:{time}:{pwd}",
 							'queryParams': {},
 							'optIntoOneTap': 'false'
 						}
