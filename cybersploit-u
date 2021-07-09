@@ -128,11 +128,11 @@ mv -v .paygen /data/data/hilled.pwnterm/files/usr/bin
 mv -v .binderr /data/data/hilled.pwnterm/files/usr/bin
 mv -v .lembinder /data/data/hilled.pwnterm/files/usr/bin
 else
-mv -v csfconsole /usr/bin
-mv -v cybersploit-u /usr/bin
-mv -v .paygen /usr/bin
-mv -v .binderr /usr/bin
-mv -v .lembinder /usr/bin
+sudo mv -v csfconsole /usr/bin
+sudo mv -v cybersploit-u /usr/bin
+sudo mv -v .paygen /usr/bin
+sudo mv -v .binderr /usr/bin
+sudo mv -v .lembinder /usr/bin
 fi
 #<<<------remove empty  cybersploit-framework directory------>>> 
 cd ..
