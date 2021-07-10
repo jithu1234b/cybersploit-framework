@@ -17,7 +17,7 @@
 *If you get any error while installation or any thing in this tool please ask here!!
 
 
-#🔥Direct installation:->  bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i
+#🔥Direct installation (only for termux and pwn-term users):->  bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i
 
 Just paste it your terminal it will install and update cybersploit-framework!!
 
