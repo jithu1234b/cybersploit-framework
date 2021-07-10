@@ -26,6 +26,7 @@ else
 cd /usr/bin
 fi
 #<<<-----remove payload generator----->>>
+if [[ $distro == /data/data/com.termux/files/home || $distro == /data/data/hilled.pwnterm/files/usr/home ]]; then
 bhu=$(find .paygen)
 if [[ $bhu == .paygen ]]
 then
@@ -75,6 +76,60 @@ printf "\e[1;97m\e[41mOld version is removing\e[0m\n"
 else
 printf "\e[1;97m\e[41mNo old version found to remove\e[0m\n"
 fi
+
+else
+
+bhu=$(find .paygen)
+if [[ $bhu == .paygen ]]
+then
+rm -rf .paygen
+printf "\e[1;90m ONE Hidden file deleted\e[0m\n"
+else
+printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
+sleep 2
+fi
+#<<<------remove payload binder------->>>
+jisu=$(find .binderr)
+if [[ $jisu == .binderr ]]
+then
+sudo rm -rf .binderr
+printf "\e[1;90m ONE Hidden file deleted\e[0m\n"
+else
+printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
+sleep 2
+fi
+#<<<------remove lemon  binder------>>>
+lemon=$(find .lembinder)
+if [[ $lemon == .lembinder ]]
+then
+sudo rm -rf .lembinder
+printf "\e[1;90m ONE Hidden file deleted\e[0m\n"
+else
+printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
+sleep 2
+fi
+#<<<------remove csfconsole------->>>
+jk=$(find csfconsole)
+if [[ $jk == csfconsole ]]
+then
+sudo rm -rf csfconsole
+else
+printf "\e[1;90myou may installing cybersploit-framework first time :)\e[0m\n"
+echo
+printf "\e[1;91mThank you for installing our cybersploit-framework :)\e[0m\n"
+sleep 2
+fi
+#<<<------remove cybersploit-u------>>>
+suman=$(find cybersploit-u)
+if [[ $suman == cybersploit-u ]]
+then
+sudo rm -rf cybersploit-u
+printf "\e[1;97m\e[41mOld version is removing\e[0m\n"
+else
+printf "\e[1;97m\e[41mNo old version found to remove\e[0m\n"
+fi
+fi
+
 #<<<------remove cybersploit-framework------>>>
 echo
 printf "\e[1;34m\e[46mplease do not stop here the process by any chance otherwise so sad for you\e[0m\n"
@@ -100,6 +155,16 @@ printf "\e[1;32m.\e[0m"
 sleep 0.2
 printf "\e[1;32m.\e[0m\n"
 git clone https://github.com/jithu1234b/cybersploit-framework
+if [[ $distro == /data/data/com.termux/files/home ]];then
+mv -v cybersploit-framework /data/data/com.termux/files/usr/share
+cd /data/data/com.termux/files/usr/share
+elif [[ $distro == /data/data/hilled.pwnterm/files/usr/home ]]; then
+mv -v cybersploit-framework /data/data/hilled.pwnterm/files/usr/share
+cd /data/data/hilled.pwnterm/files/usr/share
+else
+sudo mv -v cybersploit-framework /usr/share
+cd /usr/share
+fi
 #<<<------adding permissions to programs------>>>
 cd cybersploit-framework
 chmod u+x *
@@ -114,29 +179,27 @@ bash requirements
 #<<<----moving programs in bin directory for TERMUX------>>>
 if [[ $distro == /data/data/com.termux/files/home ]]
 then
-mv -v csfconsole /data/data/com.termux/files/usr/bin
-mv -v cybersploit-u /data/data/com.termux/files/usr/bin
-mv -v .paygen /data/data/com.termux/files/usr/bin
-mv -v .binderr /data/data/com.termux/files/usr/bin
-mv -v .lembinder /data/data/com.termux/files/usr/bin
+ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/csfconsole /data/data/com.termux/files/usr/bin/csfconsole
+ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/cybersploit-u /data/data/com.termux/files/usr/bin/cybersploit-u
+ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.paygen /data/data/com.termux/files/usr/bin/.paygen
+ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.binderr /data/data/com.termux/files/usr/bin/.binderr
+ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.lembinder /data/data/com.termux/files/usr/bin/.lembinder
 #<<<------moving programs in bin directory for PWN-TERM------>>>
 elif [[ $distro == /data/data/hilled.pwnterm/files/usr/home ]]
 then
-mv -v csfconsole /data/data/hilled.pwnterm/files/usr/bin
-mv -v cybersploit-u /data/data/hilled.pwnterm/files/usr/bin
-mv -v .paygen /data/data/hilled.pwnterm/files/usr/bin
-mv -v .binderr /data/data/hilled.pwnterm/files/usr/bin
-mv -v .lembinder /data/data/hilled.pwnterm/files/usr/bin
+ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/csfconsole /data/data/hilled.pwnterm/files/usr/bin/csfconsole
+ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/cybersploit-u /data/data/hilled.pwnterm/files/usr/bin/cybersploit-u
+ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.paygen /data/data/hilled.pwnterm/files/usr/bin/.paygen
+ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.binderr /data/data/hilled.pwnterm/files/usr/bin/.binderr
+ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.lembinder /data/data/hilled.pwnterm/files/usr/bin/.lembinder
 else
-sudo mv -v csfconsole /usr/bin
-sudo mv -v cybersploit-u /usr/bin
-sudo mv -v .paygen /usr/bin
-sudo mv -v .binderr /usr/bin
-sudo mv -v .lembinder /usr/bin
+sudo ln -sf /usr/share/cybersploit-framework/csfconsole /usr/bin/csfconsole
+sudo ln -sf /usr/share/cybersploit-framework/cybersploit-u /usr/bin/cybersploit-u
+sudo ln -sf /usr/share/cybersploit-framework/.paygen /usr/bin/.paygen
+sudo ln -sf /usr/share/cybersploit-framework/.binderr /usr/bin/.binderr
+sudo ln -sf /usr/share/cybersploit-framework/.lembinder /usr/bin/.lembinder
 fi
-#<<<------remove empty  cybersploit-framework directory------>>> 
-cd ..
-rm -rf cybersploit-framework
+cd $HOME
 clear
 #<<<------user guide after installation------>>>
 printf "\e[1;32m\e[104mLatest vesion of cybersploit is installed\e[0m\n"
@@ -151,7 +214,7 @@ echo
 printf "\e[1;97mplease run 'cd \$HOME' if 'ls' command gives any error\e[1;0m\n"
 
 
-#Direct link for cybersploit installation:- (" bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i ")
+#Direct link for cybersploit installation FOR TERMUX AND PWN-TERM USER:- (" bash <(curl -fsSL "https://bit.ly/3jwvC0N") -i ")
 #Written by:- JK && Suman Kumar ~BHUTUU
 
 
