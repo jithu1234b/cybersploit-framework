@@ -3,17 +3,19 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
-import requests, sys, threading, time, os, random
+import requests, sys, threading, os, random
 from random import randint
 from six.moves import input
 import re
-from datetime import datetime
+from datetime import datetime, date, time
+from time import gmtime, strftime
 import smtplib
 import hashlib, base64
 import instaloader
 import subprocess
 from os import system
-
+import time
+#<<<---------------UPDATE SECTION--------------->>>
 args = sys.argv[-1 or 1]
 if (args == '-u'):
 	os.system('''
@@ -31,9 +33,12 @@ sudo git pull
 fi
 		''')
 else:
-
-#<<<---------------INTRO SECTION--------------->>>
 	def banner():
+#<<<--------------DATE AND TIME SECTION--------------->>>
+		date_ = date.today()
+		time_ = strftime("%I:%M:%S")
+#<<<---------------INTRO SECTION--------------->>>
+
 		print ("\033[1;33m		    _                         _       _ _")
 		print ("\033[1;33m	  ___ _   _| |__   ___ _ __ ___ _ __ | | ___ (_) |_")
 		print ("\033[1;33m	 / __| | | | '_ \ / _ \ '__/ __| '_ \| |/ _ \| | __|")
@@ -45,6 +50,7 @@ else:
 		print ("\033[1;33m	      | (_| (_) | | | \__ \ (_) | |  __/")
 		print ("\033[1;33m	       \___\___/|_| |_|___/\___/|_|\___|")
 		print ("\n")
+		print ("CURRENT","~DATE =",(date_),"               ""~TIME =",(time_))
 		print ("\033[1;31m<<<------------welcome to cybersploit-framework------------>>>")
 		print ("\033[1;37m>>>A (PYTHON and BASH) PROGRAM Authoured by jk   !")
 		print ("\n")
@@ -52,7 +58,7 @@ else:
 #<<<---------------TOOL SECTION--------------->>>
 
 	while True:
-		name = input("\033[1;36mEnter ur username ->> ")
+		name = input("\033[1;36mEnter your username ->> ")
 		mystring = input("\033[1;36mEnter your password --> ")
 		hash_object = hashlib.md5(mystring.encode())
 		code = (hash_object.hexdigest())
