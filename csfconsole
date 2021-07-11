@@ -58,8 +58,8 @@ else:
 #<<<---------------TOOL SECTION--------------->>>
 
 	while True:
-		name = input("\033[1;36mEnter your username ->> ")
-		mystring = input("\033[1;36mEnter your password --> ")
+		name = input("\033[1;36mEnter your name ->> ")
+		mystring = input("\033[1;36mEnter your password ——>> ")
 		hash_object = hashlib.md5(mystring.encode())
 		code = (hash_object.hexdigest())
 		if (code == 'd7b3751da886d06345edb877026cb026'):
@@ -86,7 +86,7 @@ ${B0}HELP MENUE${R0}
    ${C6} quit or exit${R0} |->   Command to exit csfconsole!!
    ${C6} clear${R0}        |->   Command to clear screen.
    ${C6} help${R0}         |->   Command to show help meunu.
-   ${C6} banner${R0}       |->   Command to show banner of csfconsole.
+   ${C6} banner${R0}       |->   Command to show current banner
    ${C6} allprograms${R0}  |->   Command to show list of modules.
    ${C6} list${R0}         |->   Command to show list submodules.
    ${C6} back${R0}         |->   Command to get back to main menue.
