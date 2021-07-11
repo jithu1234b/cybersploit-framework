@@ -12,6 +12,7 @@ read lht
 echo
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LPORT==>\e[0m "
 read lpt
+break
 elif [[ $lwan == WAN ]] || [[ $lwan == wan ]]; then
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter forwarded HOST==>\e[0m "
 read flht
