@@ -12,7 +12,8 @@
 
 *To use the program run --> csfconsole
 
-*To update the program run--> cybersploit-u
+*To update the program run--> cybersploit-u 
+   OR   csfconsole -u
 
 *If you get any error while installation or any thing in this tool please ask here!!
 
