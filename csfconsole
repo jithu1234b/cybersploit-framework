@@ -33,7 +33,7 @@ sudo git pull
 fi
 		''')
 elif (args == '~u' or args == '~~update'):
-	cybersploit-u
+	os.system("cybersploit-u")
 elif (args == '-v' or args == '--version'):
 	print ("\n\033[4;2;36mCSF \033[1;37m> \033[1;32mVERSION = 2.0\033[0;0m\n")
 elif (args == sys.argv[0]):
