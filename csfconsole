@@ -15,9 +15,38 @@ import instaloader
 import subprocess
 from os import system
 import time
+def __internet_():
+	os.system('''
+#!/bin/bash
+while true; do
+ping -c 1 google.com > /dev/null 2>&1
+if [[ "$?" != 0 ]]
+then
+	echo
+        printf "\n[\e[1;31m!\e[0m]\e[1;31m YOU ARE NOT CONNECTED TO INTERNET!!\e[0m\n"
+        printf "\n\e[1;33mplease turn on your internet data to continue this process..\e[0m\n"
+	printf "\n\e[1;36mpress \e[1;31mEnter\e[1;36m if you have connected or run \e[1;31mquit\e[1;36m to exit==> \e[0m"
+        read internt
+        	if [[ $internt == 'exit' || $internt == 'quit' ]]; then
+                	printf "\e[4;97mCSF \e[0;0;0m> \e[1;32mExiting\e[0m"
+                	printf "\e[1;32m..........\e[0m\n" | pv -qL 10
+                	exit
+		else
+			:
+        	fi
+else
+        printf "\n\e[1;32m connecting to server\e[0m"
+        printf "\e[1;32m...........\e[0m\n" | pv -qL 10
+	echo
+break
+fi
+done
+		''')
+
 #<<<---------------UPDATE SECTION--------------->>>
 args = sys.argv[-1 or 0 or 1]
 if (args == '-u' or args == '--update'):
+	__internet_()
 	os.system('''
 cd $HOME
 distro=$(pwd)
@@ -33,6 +62,7 @@ sudo git pull
 fi
 		''')
 elif (args == '~u' or args == '~~update'):
+	__inertnet_()
 	os.system("cybersploit-u")
 elif (args == '-v' or args == '--version'):
 	print ("\n\033[4;2;36mCSF \033[1;37m> \033[1;32mVERSION = 2.0\033[0;0m\n")
@@ -214,7 +244,7 @@ xdg-open https://t.me/joinchat/0VDWtOuNT6lhYzM0
 
 				elif (option == '4'):
 					time.sleep (0.4)
-					print ("<<<------❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️------>>>")
+					print ("\033[1;32m<<<----------------------\033[1;31m!!cybersploit-framework!!\033[1;32m------------------>>>\033[0m")
 	#code of instagram brute :)
 					print ("\033[5;33m	 ___       ____  _      _         ____       __  __")
 					print ("\033[5;33m	|_ _|_ __ / ___|| |_   / \   __ _|  _ \ __ _|  \/  |")

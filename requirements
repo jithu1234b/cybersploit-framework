@@ -43,8 +43,9 @@ printf "press ENTER to continue _"
 read ENTER
 else
 sudo apt-get install -y lemon
-sudo apt install python3 -y
-sudo apt install findutils -y
+sudo apt-get install python3 -y
+sudo apt-get install pv -y
+sudo apt-get install findutils -y
 sudo pip install requests
 sudo pip install six
 sudo pip install instaloader
@@ -52,6 +53,7 @@ fi
 #<<<------installation of common secondary dependencies for termux and pwn-term------>>>
 if [[ $distro == /data/data/com.termux/files/home || $distro == /data/data/hilled.pwnterm/files/usr/home ]]; then
 apt install python python2 -y
+apt install pv -y
 apt install findutils -y
 pip install instaloader
 pip install requests

