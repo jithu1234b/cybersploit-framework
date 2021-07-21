@@ -25,15 +25,9 @@ then
 	echo
         printf "\n[\e[1;31m!\e[0m]\e[1;31m YOU ARE NOT CONNECTED TO INTERNET!!\e[0m\n"
         printf "\n\e[1;33mplease turn on your internet data to continue this process..\e[0m\n"
-	printf "\n\e[1;36mpress \e[1;31mEnter\e[1;36m if you have connected or run \e[1;31mquit\e[1;36m to exit==> \e[0m"
+	printf "\n\e[1;36mpress \e[1;31mEnter\e[1;36m if you have connected==> \e[0m"
         read internt
-        	if [[ $internt == 'exit' || $internt == 'quit' ]]; then
-                	printf "\e[4;97mCSF \e[0;0;0m> \e[1;32mExiting\e[0m"
-                	printf "\e[1;32m..........\e[0m\n" | pv -qL 10
-                	exit
-		else
-			:
-        	fi
+
 else
         printf "\n\e[1;32m connecting to server\e[0m"
         printf "\e[1;32m...........\e[0m\n" | pv -qL 10
@@ -62,7 +56,7 @@ sudo git pull
 fi
 		''')
 elif (args == '~u' or args == '~~update'):
-	__inertnet_()
+	__internet_()
 	os.system("cybersploit-u")
 elif (args == '-v' or args == '--version'):
 	print ("\n\033[4;2;36mCSF \033[1;37m> \033[1;32mVERSION = 2.0\033[0;0m\n")
