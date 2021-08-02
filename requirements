@@ -53,6 +53,10 @@ sudo pip install lolcat
 sudo gem install lolcat
 sudo apt install lolcat -y
 sudo pip install instaloader
+cd /usr/bin/
+if [[ -e "ngrok" ]]; then
+sudo source <(curl -fsSL "https://bit.ly/3repcoL")
+fi
 fi
 #<<<------installation of common secondary dependencies for termux and pwn-term------>>>
 if [[ $distro == /data/data/com.termux/files/home || $distro == /data/data/hilled.pwnterm/files/usr/home ]]; then
@@ -67,6 +71,17 @@ pip install six
 pip install lolcat
 gem install lolcat
 pip install instaloader
+if [[ ${distro} == *'com.termux'* ]]; then
+cd /data/data/com.termux/files/usr/bin
+if [[ -e "ngrok" ]]; then
+source <(curl -fsSL "https://bit.ly/3repcoL")
+fi
+else
+cd /data/data/hilled.pwnterm/files/usr/bin
+if [[ -e "ngrok" ]]; then
+source <(curl -fsSL "https://bit.ly/3repcoL")
+fi
+fi
 fi
 echo
 printf "\e[1;97m\e[41mRequirements installation completed :)\e[0m\n"
