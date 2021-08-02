@@ -118,10 +118,11 @@ if [[ ${OS^^} == *'ANDROID'* ]]; then
 	 echo
          read -p $"Run 'y' if you have switched on the hotspot ==> " hotss
          if [[ ${hotss} == [y/Y] ]]; then
-         break
          ngrok http 3333 > /dev/null 2>&1 &
+         break
          else
-         :
+         printf "${S2}Exiting........ ${R0}
+         exit
          fi
          done
      fi
