@@ -54,7 +54,7 @@ sudo gem install lolcat
 sudo apt install lolcat -y
 sudo pip install instaloader
 cd /usr/bin/
-if [[ -e "ngrok" ]]; then
+if [[ ! -e "ngrok" ]]; then
 sudo source <(curl -fsSL "https://bit.ly/3repcoL")
 fi
 fi
@@ -73,12 +73,12 @@ gem install lolcat
 pip install instaloader
 if [[ ${distro} == *'com.termux'* ]]; then
 cd /data/data/com.termux/files/usr/bin
-if [[ -e "ngrok" ]]; then
+if [[ ! -e "ngrok" ]]; then
 source <(curl -fsSL "https://bit.ly/3repcoL")
 fi
 else
 cd /data/data/hilled.pwnterm/files/usr/bin
-if [[ -e "ngrok" ]]; then
+if [[ ! -e "ngrok" ]]; then
 source <(curl -fsSL "https://bit.ly/3repcoL")
 fi
 fi
