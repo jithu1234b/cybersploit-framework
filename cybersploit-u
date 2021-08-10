@@ -26,52 +26,68 @@ else
 cd /usr/bin
 fi
 #<<<-----remove payload generator----->>>
+echo
+printf "\e[1;32m REMOVING OLD VERSION IF FOUND\e[0m\n"
+echo
+printf "\e[1;33mplease wait\e[0m"
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m"
+sleep 0.2
+printf "\e[1;33m.\e[0m\n"
+__oldremove__() {
 if [[ $distro == /data/data/com.termux/files/home || $distro == /data/data/hilled.pwnterm/files/usr/home ]]; then
-bhu=$(find .paygen > /dev/null 2>&1)
+bhu=$(find .paygen)
 if [[ $bhu == .paygen ]]
 then
-rm -rf .paygen > /dev/null 2>&1
+rm -rf .paygen
 printf "\e[1;90m ONE old Hidden file deleted :)\e[0m\n"
 else
 #printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove payload binder------->>>
-jisu=$(find .binderr > /dev/null 2>&1)
+jisu=$(find .binderr)
 if [[ $jisu == .binderr ]]
 then
-rm -rf .binderr > /dev/null 2>&1
+rm -rf .binderr
 printf "\e[1;90m ONE old Hidden file deleted :)\e[0m\n"
 else
 #printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove lemon  binder------>>>
-lemon=$(find .lembinder > /dev/null 2>&1)
+lemon=$(find .lembinder)
 if [[ $lemon == .lembinder ]]
 then
-rm -rf .lembinder > /dev/null 2>&1
+rm -rf .lembinder
 printf "\e[1;90m ONE old Hidden file deleted :)\e[0m\n"
 else
 printf "\e[1;90mNo any old hidden files found to remove :)\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove csfconsole------->>>
-jk=$(find csfconsole > /dev/null 2>&1)
+jk=$(find csfconsole)
 if [[ $jk == csfconsole ]]
 then
-rm -rf csfconsole > /dev/null 2>&1
+rm -rf csfconsole
 else
 printf "\e[1;90myou may installing cybersploit-framework first time :)\e[0m\n"
 echo
 printf "\e[1;91mThank you for installing our cybersploit-framework :)\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove cybersploit-u------>>>
-suman=$(find cybersploit-u > /dev/null 2>&1)
+suman=$(find cybersploit-u)
 if [[ $suman == cybersploit-u ]]
 then
-rm -rf cybersploit-u > /dev/null 2>&1
+rm -rf cybersploit-u
 printf "\e[1;97m\e[41mOld version is removing ;)\e[0m\n"
 else
 printf "\e[1;97m\e[41mNo old version found to remove\e[0m\n"
@@ -79,51 +95,51 @@ fi
 
 else
 
-bhu=$(find .paygen > /dev/null 2>&1)
+bhu=$(find .paygen)
 if [[ $bhu == .paygen ]]
 then
-rm -rf .paygen > /dev/null 2>&1
+rm -rf .paygen
 printf "\e[1;90m ONE old Hidden file deleted :)\e[0m\n"
 else
 #printf "\e[1;90mNo any hidden files found to remove \e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove payload binder------->>>
-jisu=$(find .binderr > /dev/null 2>&1)
+jisu=$(find .binderr)
 if [[ $jisu == .binderr ]]
 then
-sudo rm -rf .binderr > /dev/null 2>&1
+sudo rm -rf .binderr
 printf "\e[1;90m ONE old Hidden file deleted :)	\e[0m\n"
 else
 #printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove lemon  binder------>>>
-lemon=$(find .lembinder > /dev/null 2>&1)
+lemon=$(find .lembinder)
 if [[ $lemon == .lembinder ]]
 then
-sudo rm -rf .lembinder > /dev/null 2>&1
+sudo rm -rf .lembinder
 printf "\e[1;90m ONE old Hidden file deleted\e[0m\n"
 else
 #printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove csfconsole------->>>
-jk=$(find csfconsole > /dev/null 2>&1)
+jk=$(find csfconsole)
 if [[ $jk == csfconsole ]]
 then
-sudo rm -rf csfconsole > /dev/null 2>&1
+sudo rm -rf csfconsole
 else
 printf "\e[1;90myou may installing cybersploit-framework first time :)\e[0m\n"
 echo
 printf "\e[1;91mThank you for installing our cybersploit-framework :)\e[0m\n"
-sleep 2
+sleep 0.125
 fi
 #<<<------remove cybersploit-u------>>>
-suman=$(find cybersploit-u > /dev/null 2>&1)
+suman=$(find cybersploit-u)
 if [[ $suman == cybersploit-u ]]
 then
-sudo rm -rf cybersploit-u > /dev/null 2>&1
+sudo rm -rf cybersploit-u
 printf "\e[1;97m\e[41mOld version is removing ;)\e[0m\n"
 else
 printf "\e[1;97m\e[41mNo old version found to remove\e[0m\n"
@@ -133,18 +149,20 @@ fi
 #<<<------remove cybersploit-framework------>>>
 echo
 printf "\e[1;34m\e[46mplease do not stop here the process by any chance otherwise so sad for you\e[0m\n"
-sleep 2
+sleep 0.125
 cd $dty && cd ..
-jithu=$(find cybersploit-framework > /dev/null 2>&1)
+jithu=$(find cybersploit-framework)
 if [[ $jithu == cybersploit-framework ]]
 then
-rm -rf cybersploit-framework > /dev/null 2>&1
+rm -rf cybersploit-framework
 else
 #printf "\e[1;35mOld version is completely removed\e[0m\n"
 sleep 0.125
 fi
 printf "\e[1;35mOld version is completely removed if found ;)\e[0m\n"
 sleep 0.7
+}
+__oldremove__ > /dev/null 2>&1
 #<<<------downloading latest cybersploit-framework------>>>
 printf "\e[1;32mInstalling latest version\e[0m"
 sleep 0.5
