@@ -150,6 +150,7 @@ xdg-open https://t.me/joinchat/0VDWtOuNT6lhYzM0
 					print ("\033[4;37m8:for base64/base32 to text decoder\033[0;0m")
 					print ("\033[4;37m9:for website phishing attack\033[0;0m")
 					print ("\033[4;37m10:for camera phishing attack \033[0;0m")
+					print ("\033[4;37m11:for haxRat binder with apk file\033[0;0m")
 					print ("\033[2;37mRun 'quit' to exit the program\033[0;0m")
 					print ("\033[2;37mRun 'cmd' to run system commands\033[0;0m")
 					print ("\n")
@@ -753,6 +754,11 @@ else
   cd /usr/share/cybersploit-framework/.phish.camera/
   sudo bash phish
 fi
+						''')
+				elif (option == '11' or option == '011'):
+					os.system('''
+#!/bin/bash
+.haxbinder
 						''')
 
 				elif (option == 'cmd'):

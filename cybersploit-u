@@ -72,6 +72,16 @@ else
 printf "\e[1;90mNo any old hidden files found to remove :)\e[0m\n"
 sleep 0.125
 fi
+#<<<------removing haxbinder------>>>
+h1=$(find .haxbinder)
+if [[ $h1 == .haxbinder ]]
+then
+rm -rf .haxbinder
+printf "\e[1;90m ONE old Hidden file deleted\e[0m\n"
+else
+#printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
+sleep 0.125
+fi
 #<<<------remove csfconsole------->>>
 jk=$(find csfconsole)
 if [[ $jk == csfconsole ]]
@@ -119,6 +129,16 @@ lemon=$(find .lembinder)
 if [[ $lemon == .lembinder ]]
 then
 sudo rm -rf .lembinder
+printf "\e[1;90m ONE old Hidden file deleted\e[0m\n"
+else
+#printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
+sleep 0.125
+fi
+#<<<<------remove haxbinder------->>>
+h1=$(find .haxbinder)
+if [[ $h1 == .haxbinder ]]
+then
+sudo rm -rf .haxbinder
 printf "\e[1;90m ONE old Hidden file deleted\e[0m\n"
 else
 #printf "\e[1;90mNo any hidden files found to remove\e[0m\n"
@@ -211,12 +231,14 @@ ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/cybersplo
 ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.paygen /data/data/hilled.pwnterm/files/usr/bin/.paygen
 ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.binderr /data/data/hilled.pwnterm/files/usr/bin/.binderr
 ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.lembinder /data/data/hilled.pwnterm/files/usr/bin/.lembinder
+ln -sf /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework/.haxbinder /data/data/hilled.pwnterm/files/usr/bin/.haxbinder
 else
 sudo ln -sf /usr/share/cybersploit-framework/csfconsole /usr/bin/csfconsole
 sudo ln -sf /usr/share/cybersploit-framework/cybersploit-u /usr/bin/cybersploit-u
 sudo ln -sf /usr/share/cybersploit-framework/.paygen /usr/bin/.paygen
 sudo ln -sf /usr/share/cybersploit-framework/.binderr /usr/bin/.binderr
 sudo ln -sf /usr/share/cybersploit-framework/.lembinder /usr/bin/.lembinder
+sudo ln -sf /usr/share/cybersploit-framework/.haxbinder /usr/bin/.haxbinder
 fi
 cd $HOME
 clear
