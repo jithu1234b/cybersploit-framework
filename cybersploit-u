@@ -223,6 +223,7 @@ ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/cybersploit-u
 ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.paygen /data/data/com.termux/files/usr/bin/.paygen
 ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.binderr /data/data/com.termux/files/usr/bin/.binderr
 ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.lembinder /data/data/com.termux/files/usr/bin/.lembinder
+ln -sf /data/data/com.termux/files/usr/share/cybersploit-framework/.haxbinder /data/data/com.termux/files/usr/bin/.haxbinder
 #<<<------moving programs in bin directory for PWN-TERM------>>>
 elif [[ $distro == /data/data/hilled.pwnterm/files/usr/home ]]
 then
