@@ -1,6 +1,18 @@
 #!/bin/bash
 #<<<----------DISTRO VERIFICATION---------->>>
 distro=$(uname -o)
+case ${distro} in
+Android)
+        if ! hash jq > /dev/null 2>&1; then
+        apt install jq -y > /dev/null 2>&1
+        fi
+;;
+GNU/Linux)
+        if ! hash jq > /dev/null 2>&1; then
+        sudo apt install jq -y > /dev/null 2>&1
+        fi
+;;
+esac
 #<<<----------NGROK---------->>>
 if [[ ${distro^^} == *'ANDROID'* ]]; then
   appl=$(pwd)

