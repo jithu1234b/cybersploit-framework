@@ -124,7 +124,7 @@ echo
 if [[ ${OS^^} == *'ANDROID'* ]]; then
      if [[ ${distro} == *'com.termux'* ]]; then
          termux-chroot ngrok http 3333 > /dev/null 2>&1 &
-     else6
+     else
          while true; do
          printf "${S2}[${S1}!${S2}]${S1} Please switch on your mobile hotspot :/${R0}\n"
 	 echo
