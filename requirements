@@ -128,7 +128,7 @@ else
 echo
 printf "\e[1;31mSince you don't want to install, its not installing\e[0m\n"
 fi
-#<<<------GOING BACK TO PARENT SCRIPT (CYBERSPLOIT-U) OR REQUIREMENTS INSTALLATION COMPLETED------>>> 
+#<<<------GOING BACK TO PARENT SCRIPT (CYBERSPLOIT-U) OR REQUIREMENTS INSTALLATION COMPLETED------>>>
 echo
 printf "\e[1;37mContinuing the previous process.\e[0m"
 sleep 0.3

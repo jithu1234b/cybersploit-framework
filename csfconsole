@@ -42,17 +42,16 @@ args = sys.argv[-1 or 0 or 1]
 if (args == '-u' or args == '--update'):
 	__internet_()
 	os.system('''
-cd $HOME
-distro=$(pwd)
-if [[ $distro == /data/data/com.termux/files/home ]]; then
-cd /data/data/com.termux/files/usr/share/cybersploit-framework
+distro=$(uname -o)
+if [[ $distro == *'Android'* ]]; then
+cd $PREFIX/share/cybersploit-framework
 git pull
-elif [[ $distro == /data/data/hilled.pwnterm/files/usr/home ]]; then
-cd /data/data/hilled.pwnterm/files/usr/share/cybersploit-framework
-git pull
-else
+elif [[ $distro == *'GNU/Linux'* ]]; then
 cd /usr/share/cybersploit-framework
 sudo git pull
+else
+printf "\033[1;32m[\033[1;31m!\033[1;32m]\033[1;31mSorry but its not possible in your system!\033[0;00m\n"
+exit 1
 fi
 		''')
 elif (args == '~u' or args == '~~update'):
@@ -62,7 +61,7 @@ elif (args == '-v' or args == '--version'):
 	print ("\n\033[4;2;36mCSF \033[1;37m> \033[1;32mVERSION = 2.0\033[0;0m\n")
 elif (args == sys.argv[0]):
 	def banner():
-		
+
 #<<<--------------DATE AND TIME SECTION--------------->>>
 		date_ = date.today()
 		time_ = strftime("%I:%M:%S")

